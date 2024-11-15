@@ -63,7 +63,20 @@ function Home() {
         </div>
       </section>
 
-      
+      <section>
+        <h2 className="text-2xl font-bold mb-6">Popular Ingredients</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          {ingredients.map((ingredient) => (
+            <Link
+              key={ingredient.idIngredient}
+              to={`/ingredient/${ingredient.strIngredient}`}
+              className="bg-white rounded-lg shadow p-4 hover:shadow-lg transition-shadow"
+            >
+              <h3 className="text-center font-medium">{ingredient.strIngredient}</h3>
+            </Link>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
